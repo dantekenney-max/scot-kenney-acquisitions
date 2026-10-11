@@ -19,14 +19,14 @@ def img(id_, w=1600, q=70): return U.format(id=id_, w=w, q=q)
 IMG = {
     "hero":        img("1575517111478-7f6afd0973db", 2200, 72),
     "multifamily": img("1580041065738-e72023775cdc", 1200),
-    "waterfront":  img("1567899378494-47b22a2ae96a", 1200),
-    "rv":          img("1523987355523-c7b5b0dd90a7", 1200),
+    "waterfront":  img("1544550581-5f7ceaf7f992", 1200),
+    "rv":          img("1566073771259-6a8506099945", 1200),
     "residential": img("1580587771525-78b9dba3b914", 1200),
     "value":       img("1574362848149-11496d93a7c7", 1200),
     "approach":    img("1505142468610-359e7d316be0", 2200, 70),
     "about":       img("1582719508461-905c673771fd", 2200, 70),
     "contact":     img("1505118380757-91f5f5632de0", 2200, 70),
-    "focus":       img("1448630360428-65456885c650", 2200, 70),
+    "focus":       img("1613977257363-707ba9348227", 2200, 70),
 }
 
 NAV = [("Home", ""), ("Approach", "approach/"), ("Property Focus", "property-focus/"), ("About", "about/"), ("Contact", "contact/")]
@@ -57,7 +57,7 @@ def head(r, title, desc, current):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{r}css/style.css?v=3">
+<link rel="stylesheet" href="{r}css/style.css?v=4">
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -165,11 +165,11 @@ def home():
         <div class="body"><h3>Multifamily &amp; Income Properties</h3><p>From boutique properties to larger portfolios, we evaluate each acquisition on its merits, without arbitrary unit-count limits.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img"><img src="{IMG['waterfront']}" alt="Motor yacht moored along a tree-lined waterfront" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <div class="img"><img src="{IMG['waterfront']}" alt="Waterfront residences on a dock over clear water" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
         <div class="body"><h3>Waterfront &amp; Marina Opportunities</h3><p>Residential properties, dockage, marina-related assets, and other waterfront locations with multiple potential revenue sources.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img"><img src="{IMG['rv']}" alt="Polished travel trailer under an awning at dusk" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <div class="img"><img src="{IMG['rv']}" alt="Resort pool and lodge terrace lit at dusk" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
         <div class="body"><h3>Distinctive RV Resorts</h3><p>Well-planned motorcoach and RV destinations emphasizing attractive environments, thoughtful amenities, and compelling guest experiences&mdash;not ordinary storage lots.</p></div>
       </article>
       <article class="focus-card reveal">
@@ -186,7 +186,6 @@ def home():
       <p class="eyebrow">How We Create Value</p>
       <h2>We look beyond the listing</h2>
       <p class="lead">We look beyond the listing to examine property economics, overlooked revenue opportunities, physical improvements, positioning, operations, and realistic exit options. Each project requires independent due diligence and a sound execution plan.</p>
-      <a class="btn btn-outline" href="approach/">See how we work {ARROW}</a>
     </div>
     <div class="split-media reveal"><img src="{IMG['value']}" alt="Mid-rise apartment building in warm evening light" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
   </div>
@@ -258,7 +257,7 @@ def property_focus():
     h = head(r, "Property Focus", "Selective across property types: multifamily and mixed-use, waterfront real estate and marinas, distinctive RV and motorcoach destinations, next-generation technology communities.", "property-focus/")
     body = f"""
 <section class="page-head">
-  <div class="hero-media"><img src="{IMG['focus']}" alt="Modern apartment building facade against a clear sky"></div>
+  <div class="hero-media"><img src="{IMG['focus']}" alt="Contemporary white residence with a terrace and pool"></div>
   <div class="wrap">
     <p class="eyebrow">Property Focus</p>
     <h1>Selective Across Property Types</h1>
@@ -394,6 +393,7 @@ def contact():
         <div class="field">
           <label for="f-topic">I am contacting you about <span class="req" aria-hidden="true">*</span></label>
           <select id="f-topic" name="topic" required>
+            <option value="" selected disabled>Select one</option>
             <option value="Capital / Joint Venture Partnership">Capital / Joint Venture Partnership</option>
             <option value="Property for Sale">Property for Sale</option>
             <option value="Brokerage Opportunity">Brokerage Opportunity</option>
@@ -436,7 +436,7 @@ def notice():
   <div class="wrap prose">
     <p class="lead">{NOTICE}</p>
     <h2>Information on this site</h2>
-    <p>Content on this website describes the general business interests of Scot Kenney Acquisitions. Property types, concepts, and illustrations are presented for informational purposes. Architectural renderings labeled &ldquo;Concept illustration&rdquo; depict design concepts only and do not represent completed projects, active developments, or current offerings. Photographs labeled &ldquo;Illustrative imagery&rdquo; are licensed stock images and do not depict properties owned or operated by the company.</p>
+    <p>Content on this website describes the general business interests of Scot Kenney Acquisitions. Property types, concepts, and illustrations are presented for informational purposes. Architectural renderings labeled &ldquo;Concept illustration&rdquo; depict design concepts only and do not represent completed projects, active developments, or current offerings. Photographs labeled &ldquo;Illustrative imagery&rdquo; are stock images used under the Unsplash license and do not depict properties owned or operated by the company.</p>
     <h2>Contact form</h2>
     <p>Information submitted through the contact form (name, organization, email address, telephone, and message) is used only to review and respond to your inquiry. It is sent to {EMAIL} and is not sold or shared with third parties. Please do not submit financial statements or confidential documents through the form.</p>
     <h2>Contact</h2>
@@ -489,4 +489,15 @@ if __name__ == "__main__":
     write("invest/index.html", redirect_page("../approach/", "Approach"))
     write("expertise/index.html", redirect_page("../property-focus/", "Property Focus"))
     write("disclosures/index.html", redirect_page("../website-notice/", "Website Notice"))
+    write("terms/index.html", redirect_page("../website-notice/", "Website Notice"))
+    write("robots.txt", "User-agent: *
+Allow: /
+Sitemap: https://www.scotkenneyacquisitions.com/sitemap.xml
+")
+    base = "https://www.scotkenneyacquisitions.com/"
+    write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+' + "".join(f"  <url><loc>{base}{u}</loc></url>
+" for u in ["", "approach/", "property-focus/", "about/", "contact/", "website-notice/"]) + "</urlset>
+")
     write(".nojekyll", "")

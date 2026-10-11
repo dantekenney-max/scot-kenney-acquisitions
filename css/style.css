@@ -221,7 +221,7 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 1.8rem); }
 .concept .frame img { width: 100%; height: auto; }
 .concept figcaption { font-size: .82rem; color: var(--ink-soft); margin-top: .7rem; line-height: 1.5; }
 .concept figcaption strong { color: var(--navy); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; font-size: .68rem; display: block; margin-bottom: .2rem; }
-.concept.small { max-width: 420px; }
+.concept.small { max-width: 320px; }
 .placeholder {
   display: grid; place-items: center; text-align: center;
   aspect-ratio: 16 / 9; padding: 1.5rem;
