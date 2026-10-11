@@ -69,7 +69,7 @@
     ev.preventDefault();
 
     // Honeypot: real visitors never fill this.
-    if (form.querySelector('input[name="website"]').value) { return; }
+    if (form.querySelector('input[name="_honey"]').value) { return; }
 
     if (!form.checkValidity()) { form.reportValidity(); return; }
 

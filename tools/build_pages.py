@@ -11,7 +11,7 @@ PHONE_DISPLAY = "+1 530-415-0778"
 PHONE_TEL = "+15304150778"
 WHATSAPP = "https://wa.me/15304150778"
 # Leave empty until a form-relay endpoint (e.g. Formspree) is created in Scot's name.
-FORM_ENDPOINT = ""
+FORM_ENDPOINT = "https://formsubmit.co/ajax/Scot@scotkenneyacquisitions.com"  # no-account relay; first submission triggers a one-time activation email to Scot
 
 # Illustrative stock imagery (Unsplash License). Labeled "Illustrative imagery" on the site.
 U = "https://images.unsplash.com/photo-{id}?auto=format&fit=crop&w={w}&q={q}"
@@ -57,7 +57,7 @@ def head(r, title, desc, current):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{r}css/style.css?v=2">
+<link rel="stylesheet" href="{r}css/style.css?v=3">
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -119,7 +119,7 @@ def foot(r):
     </div>
   </div>
 </footer>
-<script src="{r}js/main.js?v=1"></script>
+<script src="{r}js/main.js?v=2"></script>
 </body>
 </html>
 """
@@ -402,7 +402,8 @@ def contact():
           </select>
         </div>
         <div class="field"><label for="f-msg">Message <span class="req" aria-hidden="true">*</span></label><textarea id="f-msg" name="message" required></textarea></div>
-        <div class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_subject" value="Website inquiry - scotkenneyacquisitions.com"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false">
+        <div class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
         <div class="btn-row" style="align-items:center;gap:1.4rem">
           <button class="btn btn-primary" type="submit">Send Inquiry</button>
           <p class="form-note">Please do not send financial statements or confidential documents through this form.</p>
