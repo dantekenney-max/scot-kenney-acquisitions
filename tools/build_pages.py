@@ -495,9 +495,13 @@ Allow: /
 Sitemap: https://www.scotkenneyacquisitions.com/sitemap.xml
 ")
     base = "https://www.scotkenneyacquisitions.com/"
-    write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>
+    urls = ["", "approach/", "property-focus/", "about/", "contact/", "website-notice/"]
+    sm = '<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-' + "".join(f"  <url><loc>{base}{u}</loc></url>
-" for u in ["", "approach/", "property-focus/", "about/", "contact/", "website-notice/"]) + "</urlset>
+'
+    sm += "".join("  <url><loc>%s%s</loc></url>
+" % (base, u) for u in urls) + "</urlset>
+"
+    write("sitemap.xml", sm)
 ")
     write(".nojekyll", "")
