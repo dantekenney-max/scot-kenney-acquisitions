@@ -57,7 +57,10 @@ Contact details confirmed from the live site: `Scot@scotkenneyacquisitions.com`,
 
 ## Change log
 
-- 2026-10-11 — Repo created, staging enabled, spec locked, old site inventoried. Build in progress.
+- 2026-10-11 — Repo created, staging enabled, spec locked, old site inventoried.
+- 2026-10-11 — Full build pushed: HOME, APPROACH, PROPERTY FOCUS, ABOUT, CONTACT, WEBSITE NOTICE, 404; legacy `/invest` `/expertise` `/disclosures` redirect pages; `.nojekyll`. Verified on the live staging URL with headless Chromium: 0 console errors, all images load, banned-term scan clean, 1366px desktop + 390px mobile.
+- 2026-10-11 — Fix: mobile menu had no background (header backdrop-filter made it the containing block for the fixed nav; explicit top/height now). CSS cache-buster v2.
+- Pending: owner-supplied concept images (`images/concept-motorcoach-resort.jpg`, `images/concept-community-entrance.jpg`); form relay endpoint (`FORM_ENDPOINT` in `tools/build_pages.py`); owner review; DNS cut-over.
 
 ## Items requiring owner (Scot) approval before publication
 

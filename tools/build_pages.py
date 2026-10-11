@@ -57,7 +57,7 @@ def head(r, title, desc, current):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{r}css/style.css?v=1">
+<link rel="stylesheet" href="{r}css/style.css?v=2">
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
