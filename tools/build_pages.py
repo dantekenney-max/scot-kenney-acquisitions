@@ -490,17 +490,12 @@ if __name__ == "__main__":
     write("expertise/index.html", redirect_page("../property-focus/", "Property Focus"))
     write("disclosures/index.html", redirect_page("../website-notice/", "Website Notice"))
     write("terms/index.html", redirect_page("../website-notice/", "Website Notice"))
-    write("robots.txt", "User-agent: *
-Allow: /
-Sitemap: https://www.scotkenneyacquisitions.com/sitemap.xml
-")
+    write("robots.txt", "User-agent: *" + chr(10) + "Allow: /" + chr(10) + "Sitemap: https://www.scotkenneyacquisitions.com/sitemap.xml" + chr(10))
     base = "https://www.scotkenneyacquisitions.com/"
     urls = ["", "approach/", "property-focus/", "about/", "contact/", "website-notice/"]
-    sm = '<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-'
-    sm += "".join("  <url><loc>%s%s</loc></url>
-" % (base, u) for u in urls) + "</urlset>
+    NL = chr(10)
+    sm = '<?xml version="1.0" encoding="UTF-8"?>' + NL + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + NL
+    sm += "".join("  <url><loc>%s%s</loc></url>" % (base, u) + NL for u in urls) + "</urlset>
 "
     write("sitemap.xml", sm)
 ")
