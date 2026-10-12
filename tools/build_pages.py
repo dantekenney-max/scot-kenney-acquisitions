@@ -17,7 +17,7 @@ FORM_ENDPOINT = "https://formsubmit.co/ajax/Scot@scotkenneyacquisitions.com"  # 
 U = "https://images.unsplash.com/photo-{id}?auto=format&fit=crop&w={w}&q={q}"
 def img(id_, w=1600, q=70): return U.format(id=id_, w=w, q=q)
 IMG = {
-    "hero":        img("1791542298987-b2187db72292", 2200, 72),
+    "hero":        "images/hero-waterfront-ai.jpg",          # AI-generated illustrative rendering, labeled as such
     "multifamily": img("1762539744669-cb85948f1675", 1200),
     "waterfront":  "images/marina-aerial.jpg",               # owner's original marina aerial (from the prior site)
     "rv":          "images/concept-motorcoach-resort-ai.jpg", # AI-generated concept rendering, labeled as such
@@ -143,7 +143,7 @@ def home():
     h = head(r, "Home", "Scot Kenney Acquisitions identifies distinctive real estate opportunities where thoughtful acquisitions, operational improvements, and creative development strategies may unlock long-term value.", "")
     body = f"""
 <section class="hero">
-  <div class="hero-media"><img src="{P(r, 'hero')}" alt="Contemporary waterfront apartment building with boats at its private dock" fetchpriority="high"></div>
+  <div class="hero-media"><img src="{P(r, 'hero')}" alt="Illustrative rendering of a boutique waterfront apartment building with boats at its private dock" fetchpriority="high"></div>
   <div class="wrap">
     <p class="eyebrow">Scot Kenney Acquisitions</p>
     <h1>Strategic Real Estate Acquisitions &amp; Development</h1>
@@ -154,7 +154,7 @@ def home():
       <a class="btn btn-ghost" href="contact/">Start a Conversation</a>
     </div>
   </div>
-  <span class="hero-note">Illustrative imagery</span>
+  <span class="hero-note">Illustrative rendering</span>
 </section>
 
 <section class="section">
@@ -440,7 +440,7 @@ def notice():
   <div class="wrap prose">
     <p class="lead">{NOTICE}</p>
     <h2>Information on this site</h2>
-    <p>Content on this website describes the general business interests of Scot Kenney Acquisitions. Property types, concepts, and illustrations are presented for informational purposes. Architectural renderings labeled &ldquo;Concept illustration&rdquo; depict design concepts only and do not represent completed projects, active developments, or current offerings. Images labeled &ldquo;Concept rendering&rdquo; are computer-generated depictions of a design concept, not photographs of an existing property. Photographs labeled &ldquo;Illustrative imagery&rdquo; are stock or archival images used for illustration and do not depict properties owned, operated, or acquired by the company.</p>
+    <p>Content on this website describes the general business interests of Scot Kenney Acquisitions. Property types, concepts, and illustrations are presented for informational purposes. Architectural renderings labeled &ldquo;Concept illustration&rdquo; depict design concepts only and do not represent completed projects, active developments, or current offerings. Images labeled &ldquo;Concept rendering&rdquo; or &ldquo;Illustrative rendering&rdquo; are computer-generated images, not photographs of an existing or company-owned property. Photographs labeled &ldquo;Illustrative imagery&rdquo; are stock or archival images used for illustration and do not depict properties owned, operated, or acquired by the company.</p>
     <h2>Contact form</h2>
     <p>Information submitted through the contact form (name, organization, email address, telephone, and message) is used only to review and respond to your inquiry. It is sent to {EMAIL} and is not sold or shared with third parties. Please do not submit financial statements or confidential documents through the form.</p>
     <h2>Contact</h2>
