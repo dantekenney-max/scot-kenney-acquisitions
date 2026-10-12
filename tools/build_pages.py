@@ -17,16 +17,13 @@ FORM_ENDPOINT = "https://formsubmit.co/ajax/Scot@scotkenneyacquisitions.com"  # 
 U = "https://images.unsplash.com/photo-{id}?auto=format&fit=crop&w={w}&q={q}"
 def img(id_, w=1600, q=70): return U.format(id=id_, w=w, q=q)
 IMG = {
-    "hero":        "images/hero-waterfront-ai.jpg",          # AI-generated illustrative rendering, labeled as such
-    "multifamily": img("1762539744669-cb85948f1675", 1200),
-    "waterfront":  "images/marina-aerial.jpg",               # owner's original marina aerial (from the prior site)
-    "rv":          "images/concept-motorcoach-resort-ai.jpg", # AI-generated concept rendering, labeled as such
-    "residential": "images/concept-community-entrance.jpg",   # owner-supplied entrance rendering only
-    "value":       img("1512915922686-57c11dde9b6b", 1200),
-    "approach":    img("1505142468610-359e7d316be0", 2200, 70),
-    "about":       img("1582719508461-905c673771fd", 2200, 70),
-    "contact":     img("1654575100652-41d658a3bc86", 2200, 70),
-    "focus":       img("1727771367464-74863a888160", 2200, 70),
+    "hero":        "images/hero-waterfront-ai.jpg",                      # AI candidate, labeled "Conceptual illustration"
+    "multifamily": img("1580041065738-e72023775cdc", 1200),             # KEEP (owner instruction)
+    "yacht":       img("1567899378494-47b22a2ae96a", 1200),             # KEEP on Property Focus (owner instruction)
+    "rv":          "images/owner-motorcoach-clubhouse-concept.jpg",      # owner-supplied Image A
+    "residential": "images/concept-community-entrance.jpg",              # owner-supplied Vue entrance rendering
+    "approach":    "images/marina-aerial.jpg",                           # owner's original Expertise-page marina aerial
+    "lavender":    "images/owner-blackfoot-lavender-retreat-concept.jpg",# owner-supplied Image B
 }
 def P(r, key):
     """Image URL for a page at depth r; local files under images/ need the relative prefix."""
@@ -61,7 +58,7 @@ def head(r, title, desc, current):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{r}css/style.css?v=4">
+<link rel="stylesheet" href="{r}css/style.css?v=5">
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -143,7 +140,7 @@ def home():
     h = head(r, "Home", "Scot Kenney Acquisitions identifies distinctive real estate opportunities where thoughtful acquisitions, operational improvements, and creative development strategies may unlock long-term value.", "")
     body = f"""
 <section class="hero">
-  <div class="hero-media"><img src="{P(r, 'hero')}" alt="Illustrative rendering of a boutique waterfront apartment building with boats at its private dock" fetchpriority="high"></div>
+  <div class="hero-media"><img src="{P(r, 'hero')}" alt="Conceptual illustration of a boutique waterfront apartment building with boats at its private dock" fetchpriority="high"></div>
   <div class="wrap">
     <p class="eyebrow">Scot Kenney Acquisitions</p>
     <h1>Strategic Real Estate Acquisitions &amp; Development</h1>
@@ -154,7 +151,7 @@ def home():
       <a class="btn btn-ghost" href="contact/">Start a Conversation</a>
     </div>
   </div>
-  <span class="hero-note">Illustrative rendering</span>
+  <span class="hero-note">Conceptual illustration</span>
 </section>
 
 <section class="section">
@@ -165,15 +162,15 @@ def home():
     </div>
     <div class="grid-4">
       <article class="focus-card reveal">
-        <div class="img"><img src="{P(r, 'multifamily')}" alt="Well-kept apartment community arranged around a landscaped pool" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <div class="img"><img src="{P(r, 'multifamily')}" alt="Low-rise apartment community with landscaped courtyard" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
         <div class="body"><h3>Multifamily &amp; Income Properties</h3><p>From boutique properties to larger portfolios, we evaluate each acquisition on its merits, without arbitrary unit-count limits.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img"><img src="{P(r, 'waterfront')}" alt="Aerial view of a marina with boats at the docks" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <div class="img type" aria-hidden="true"><svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10v34"/><circle cx="32" cy="8" r="3"/><path d="M24 18h16"/><path d="M14 36c2 9 9 14 18 14s16-5 18-14"/><path d="M10 36l4 0M50 36l4 0"/><path d="M6 58c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/></g></svg></div>
         <div class="body"><h3>Waterfront &amp; Marina Opportunities</h3><p>Residential properties, dockage, marina-related assets, and other waterfront locations with multiple potential revenue sources.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img"><img src="{P(r, 'rv')}" alt="Concept rendering of a luxury motorcoach resort with private sites, plunge pools and a black-glass clubhouse" loading="lazy"><span class="img-tag">Concept rendering</span></div>
+        <div class="img"><img src="{P(r, 'rv')}" alt="Conceptual illustration of a luxury motorcoach resort with a three-story black-glass clubhouse and pool" loading="lazy"><span class="img-tag">Conceptual illustration</span></div>
         <div class="body"><h3>Distinctive RV Resorts</h3><p>Well-planned motorcoach and RV destinations emphasizing attractive environments, thoughtful amenities, and compelling guest experiences&mdash;not ordinary storage lots.</p></div>
       </article>
       <article class="focus-card reveal">
@@ -185,13 +182,12 @@ def home():
 </section>
 
 <section class="section tint">
-  <div class="wrap split">
-    <div class="reveal">
+  <div class="wrap">
+    <div class="reveal measure">
       <p class="eyebrow">How We Create Value</p>
       <h2>We look beyond the listing</h2>
       <p class="lead">We look beyond the listing to examine property economics, overlooked revenue opportunities, physical improvements, positioning, operations, and realistic exit options. Each project requires independent due diligence and a sound execution plan.</p>
     </div>
-    <div class="split-media reveal"><img src="{P(r, 'value')}" alt="Contemporary white apartment building with palm trees" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
   </div>
 </section>
 
@@ -218,7 +214,7 @@ def approach():
     h = head(r, "Approach", "An opportunity-driven acquisition philosophy: identify, underwrite, structure, execute, reassess.", "approach/")
     body = f"""
 <section class="page-head">
-  <div class="hero-media"><img src="{P(r, 'approach')}" alt="Aerial view of a coastline where waves meet sand"></div>
+  <div class="hero-media"><img src="{P(r, 'approach')}" alt="Aerial view of a marina with boats at the docks"></div>
   <div class="wrap">
     <p class="eyebrow">Approach</p>
     <h1>An Opportunity-Driven Acquisition Philosophy</h1>
@@ -260,19 +256,17 @@ def property_focus():
     r = "../"
     h = head(r, "Property Focus", "Selective across property types: multifamily and mixed-use, waterfront real estate and marinas, distinctive RV and motorcoach destinations, next-generation technology communities.", "property-focus/")
     body = f"""
-<section class="page-head">
-  <div class="hero-media"><img src="{P(r, 'focus')}" alt="Waterfront apartment buildings with a sailboat in the foreground"></div>
+<section class="page-head plain">
   <div class="wrap">
     <p class="eyebrow">Property Focus</p>
     <h1>Selective Across Property Types</h1>
   </div>
-  <span class="hero-note">Illustrative imagery</span>
 </section>
 
 <section class="section">
   <div class="wrap">
     <div class="pf-item reveal">
-      <div class="pf-media"><img src="{P(r, 'multifamily')}" alt="Well-kept apartment community arranged around a landscaped pool" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+      <div class="pf-media"><img src="{P(r, 'multifamily')}" alt="Low-rise apartment community with landscaped courtyard" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
       <div>
         <h2>Multifamily &amp; Mixed-Use</h2>
         <p>We consider income-producing residential properties of varying sizes, including smaller assets with unusual locations or compelling operational potential and larger acquisitions where scale creates efficiencies.</p>
@@ -280,16 +274,15 @@ def property_focus():
     </div>
 
     <div class="pf-item reveal">
-      <div class="pf-media"><img src="{P(r, 'waterfront')}" alt="Aerial view of a marina with boats at the docks" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+      <div class="pf-media"><img src="{P(r, 'yacht')}" alt="Motor yacht moored along a tree-lined waterfront" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
       <div>
         <h2>Waterfront Real Estate &amp; Marinas</h2>
         <p>Waterfront apartments, marina assets, boat slips, and related properties may offer distinctive combinations of location, income, and repositioning possibilities. Every opportunity must be evaluated for local permitting, insurance, dockage rights, operating costs, and demand.</p>
       </div>
     </div>
 
-    <div class="pf-item reveal">
-      <div class="pf-media"><img src="{P(r, 'rv')}" alt="Concept rendering of a luxury motorcoach resort with private sites, plunge pools and a black-glass clubhouse" loading="lazy"><span class="img-tag">Concept rendering</span></div>
-      <div>
+    <div class="pf-item reveal" style="grid-template-columns:1fr">
+      <div class="measure">
         <h2>Distinctive RV &amp; Motorcoach Destinations</h2>
         <p>We evaluate distinctive RV and motorcoach destinations where design, landscaping, hospitality, and amenities could create a compelling guest experience and additional revenue opportunities. As one example of our founder&rsquo;s creative approach, Scot Kenney conceived a luxury motorcoach resort with a dramatic three-story black-glass clubhouse, private-site amenities, dining, and cultural events; an architect prepared an illustration of his concept. This was a design concept, not a completed development.</p>
         <div class="concept small">
@@ -341,13 +334,11 @@ def about():
     r = "../"
     h = head(r, "About", "Entrepreneurial thinking. Disciplined real estate evaluation.", "about/")
     body = f"""
-<section class="page-head">
-  <div class="hero-media"><img src="{P(r, 'about')}" alt="Waterside deck chairs facing the water at sunset"></div>
+<section class="page-head plain">
   <div class="wrap">
     <p class="eyebrow">About</p>
     <h1>Entrepreneurial Thinking. Disciplined Real Estate Evaluation.</h1>
   </div>
-  <span class="hero-note">Illustrative imagery</span>
 </section>
 
 <section class="section">
@@ -363,6 +354,18 @@ def about():
     </div>
   </div>
 </section>
+<section class="section tint">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">Creative Vision</p>
+      <h2>Creative Vision. Real Estate Opportunity.</h2>
+    </div>
+    <figure class="feature reveal">
+      <div class="split-media"><img src="{P(r, 'lavender')}" alt="Conceptual rendering of the Blackfoot Lavender Retreat: lavender fields, a fountain, fire pit and a dark board-and-batten event barn at dusk" loading="lazy"><span class="img-tag">Conceptual rendering</span></div>
+      <figcaption>Blackfoot Lavender Retreat &mdash; conceptual rendering. This is a rendering, not a photograph of completed work.</figcaption>
+    </figure>
+  </div>
+</section>
 {cta_band(r, "Get in Touch", "We welcome a direct conversation about properties, capital relationships, or collaboration.", "Get in Touch", "contact/")}
 """
     return h + body + foot(r)
@@ -372,13 +375,11 @@ def contact():
     r = "../"
     h = head(r, "Contact", "Start a business conversation with Scot Kenney Acquisitions.", "contact/")
     body = f"""
-<section class="page-head">
-  <div class="hero-media"><img src="{P(r, 'contact')}" alt="Palm-lined waterfront promenade with sailboats and a city skyline"></div>
+<section class="page-head plain">
   <div class="wrap">
     <p class="eyebrow">Contact</p>
     <h1>Start a Business Conversation</h1>
   </div>
-  <span class="hero-note">Illustrative imagery</span>
 </section>
 
 <section class="section">
@@ -440,7 +441,7 @@ def notice():
   <div class="wrap prose">
     <p class="lead">{NOTICE}</p>
     <h2>Information on this site</h2>
-    <p>Content on this website describes the general business interests of Scot Kenney Acquisitions. Property types, concepts, and illustrations are presented for informational purposes. Architectural renderings labeled &ldquo;Concept illustration&rdquo; depict design concepts only and do not represent completed projects, active developments, or current offerings. Images labeled &ldquo;Concept rendering&rdquo; or &ldquo;Illustrative rendering&rdquo; are computer-generated images, not photographs of an existing or company-owned property. Photographs labeled &ldquo;Illustrative imagery&rdquo; are stock or archival images used for illustration and do not depict properties owned, operated, or acquired by the company.</p>
+    <p>Content on this website describes the general business interests of Scot Kenney Acquisitions. Property types, concepts, and illustrations are presented for informational purposes. Architectural renderings labeled &ldquo;Concept illustration&rdquo; depict design concepts only and do not represent completed projects, active developments, or current offerings. Images labeled &ldquo;Conceptual illustration&rdquo; or &ldquo;Conceptual rendering&rdquo; are renderings of concepts, not photographs of an existing, completed, or company-owned property. Photographs labeled &ldquo;Illustrative imagery&rdquo; are stock or archival images used for illustration and do not depict properties owned, operated, or acquired by the company.</p>
     <h2>Contact form</h2>
     <p>Information submitted through the contact form (name, organization, email address, telephone, and message) is used only to review and respond to your inquiry. It is sent to {EMAIL} and is not sold or shared with third parties. Please do not submit financial statements or confidential documents through the form.</p>
     <h2>Contact</h2>

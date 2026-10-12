@@ -1,32 +1,36 @@
-# Image sources & licenses — visual refinement, 2026-10-12
+# Image change log — per Scot's FINAL Image Replacement Instructions (email Mon 10/12/2026 8:55 AM)
 
-Per Scot's "Visual Refinement Instructions" (Oct 12). Every image on the preview, where it came from, and its license.
+Preview: https://dantekenney-max.github.io/scot-kenney-acquisitions/  (live domain untouched)
 
-| Where it appears | File / source | What it is | License / basis | Label on site |
+## Page by page
+| Page / slot | Instruction | Result | Source / license | Label |
 |---|---|---|---|---|
-| Home hero | `images/hero-waterfront-ai.jpg` | AI-generated (ChatGPT) boutique waterfront multifamily building with boats at its dock, South Florida style | Generated for this site; not a real property | "Illustrative rendering" |
-| Home + Property Focus: Waterfront & Marina | `images/marina-aerial.jpg` | The aerial marina photo from the original Expertise page (scotkenneyacquisitions.com, 2477x1650 original) | Owner's existing site asset; use approved by Dante 2026-10-12 | "Illustrative imagery" |
-| Home + Property Focus: RV / Motorcoach | `images/concept-motorcoach-resort-ai.jpg` | AI-generated (ChatGPT) Class A motorcoach resort: private pads, plunge pools, black-glass clubhouse | Generated for this site; no free licensed photo of an upscale Class A motorcoach resort exists on Unsplash/Pexels/Wikimedia | "Concept rendering" |
-| Property Focus (small, under RV text) | `images/concept-motorcoach-resort.jpg` | Owner's hand-drawn architect illustration (phone photo) | Owner-supplied | Owner's caption, verbatim |
-| Home "Innovative Residential" card + Property Focus tech community | `images/concept-community-entrance.jpg` | Owner's original entrance rendering | Owner-supplied (only image used for this concept) | "Concept illustration" + owner's caption |
-| Home + Property Focus: Multifamily | Unsplash `1762539744669-cb85948f1675` — Dora Abruzzese — https://unsplash.com/photos/modern-resort-with-large-swimming-pool-and-lounge-chairs-77C9Np7HFzg | Apartment community around a landscaped pool | Unsplash License (free) | "Illustrative imagery" |
-| Home "How we create value" | Unsplash `1512915922686-57c11dde9b6b` — Frames For Your Heart — https://unsplash.com/photos/houses-surrounded-with-plants-vbSRUrNm3Ik | White contemporary apartment building with palms | Unsplash License (free) | "Illustrative imagery" |
-| Property Focus header | Unsplash `1727771367464-74863a888160` — Gordon Beeming — https://unsplash.com/photos/a-red-boat-in-a-body-of-water-K6nDQzqHnx0 | Waterfront apartment buildings, sailboat in front | Unsplash License (free) | "Illustrative imagery" |
-| Contact header | Unsplash `1654575100652-41d658a3bc86` — Richard Sagredo — https://unsplash.com/photos/a-body-of-water-with-boats-in-it-MyzZYv-ddLM | Palm-lined waterfront with sailboats | Unsplash License (free) | "Illustrative imagery" |
-| Approach header (unchanged) | Unsplash `1505142468610-359e7d316be0` — Shifaaz shamoon — https://unsplash.com/photos/aerial-photo-of-seashore-sLAk1guBG90 | Aerial shoreline | Unsplash License (free) | "Illustrative imagery" |
-| About header (unchanged) | Unsplash `1582719508461-905c673771fd` — Sasha Kaunas — https://unsplash.com/photos/brown-wooden-lounge-chairs-on-brown-wooden-dock-during-daytime-xEaAoizNFV8 | Deck chairs facing the water | Unsplash License (free) | "Illustrative imagery" |
+| Home hero | REPLACE: one waterfront multifamily/marina image, negative space for headline | `images/hero-waterfront-ai.jpg` — boutique waterfront multifamily building with boats at its dock; open water on the left for the headline. **Candidate for Scot's approval.** | AI-generated (ChatGPT) for this site; no free licensed photo fit | "Conceptual illustration" |
+| Home Multifamily card | KEEP | Original preview photo kept | Unsplash `1580041065738-e72023775cdc` (Unsplash License) | "Illustrative imagery" |
+| Home Waterfront/Marina card | REMOVE IMAGE | Photo removed; navy panel with a simple anchor line icon | — | — |
+| Home RV resort card | REPLACE with supplied Image A | `images/owner-motorcoach-clubhouse-concept.jpg` | Supplied by Scot (Image A) | "Conceptual illustration" |
+| Home Innovative Residential card | REPLACE with actual Vue entrance rendering | `images/concept-community-entrance.jpg` | Supplied by Scot (original) | "Concept illustration" |
+| Home "We look beyond the listing" | REMOVE IMAGE | Photo removed; wording kept | — | — |
+| Approach hero | REPLACE with original Expertise-page marina aerial | `images/marina-aerial.jpg` — taken from the original site's media library at full resolution (2477x1650), not a screenshot | Owner's existing site asset (use OK'd by Dante) | "Illustrative imagery" |
+| Approach optional caption | OPTIONAL | Not added (kept the hero clean) | — | — |
+| Property Focus hero | REMOVE IMAGE | Clean title header | — | — |
+| Property Focus Multifamily | KEEP | Kept | Unsplash `1580041065738-e72023775cdc` | "Illustrative imagery" |
+| Property Focus Waterfront | KEEP yacht photo | Kept | Unsplash `1567899378494-47b22a2ae96a` (Unsplash License) | "Illustrative imagery" |
+| Property Focus RV/Motorcoach | REMOVE DUPLICATE | Text only (no clubhouse repeat); Scot's small architect sketch + his caption remain | Supplied by Scot | Owner's caption |
+| Property Focus Technology Community | KEEP ORIGINAL | Real Vue entrance rendering + approved wording | Supplied by Scot | "Concept illustration" |
+| About hero | REPLACE with Image B as compact feature | Clean title header; compact "Creative Vision. Real Estate Opportunity." section with `images/owner-blackfoot-lavender-retreat-concept.jpg` and caption "conceptual rendering ... not a photograph of completed work" | Supplied by Scot (Image B) | "Conceptual rendering" |
+| About other generic photo | REMOVE | Removed (deck-chairs banner gone) | — | — |
+| Contact hero | REMOVE IMAGE | Clean header; form untouched | — | — |
 
-## Removed
-- Home hero: single-family house with deck (looked like a luxury-home seller).
-- RV: vintage travel trailer / camper — removed entirely, per instructions.
-- Waterfront: motor yacht stock photo — replaced by the owner's marina aerial.
-- "Innovative Residential" card: generic modern mansion — replaced by the owner's entrance rendering (instructions: no generic modern houses for this concept).
-- Property Focus header: white single-family villa (same mansion problem).
-- Contact header: was a near-duplicate of the Approach wave aerial (repetitive).
-- "Value" image: brick apartments with red balconies (looked cheap).
+## Acceptance checklist (Scot's) — status
+- [x] No small camper or travel-trailer photo remains.
+- [x] No plain ocean hero remains on Approach or Contact.
+- [x] Home hero is not a stand-alone luxury house.
+- [x] Original marina image reused at full resolution, not a screenshot.
+- [x] Only the real Vue entrance image is used for the technology community.
+- [x] Clubhouse and lavender images labeled as conceptual.
+- [x] No excessive apartment/yacht duplication (one multifamily photo, one yacht photo, site-wide).
+- [x] Headings readable desktop + phone; 0 broken images on all pages; contact form present and unchanged; no sideways scroll at 375px.
+- [x] Preview link + this list of replaced/removed/retained images.
 
-## Text changes (owner's exact wording)
-- Tech-community description replaced with the approved short description (section 3 of the instructions).
-- Tech-community caption: "Original development concept. Subject to feasibility and applicable approvals."
-- Motorcoach sketch caption: "Original luxury motorcoach resort concept — envisioned by Scot Kenney; architectural illustration. Not a completed development."
-- Website Notice: explains "Concept rendering" / "Illustrative rendering" are computer-generated and "Illustrative imagery" does not depict company properties.
+No offering language, return targets, investor minimums or regulatory claims were added.

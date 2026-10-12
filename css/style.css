@@ -291,3 +291,9 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 1.8rem); }
   .hero-media img { animation: none; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Final image instructions (Oct 12): typographic card panel, compact captioned feature */
+.focus-card .img.type { display: grid; place-items: center; background: var(--navy); color: var(--brass-soft); }
+.focus-card .img.type svg { width: 34%; height: auto; opacity: .9; }
+.feature { margin: 0; }
+.feature figcaption { margin-top: .8rem; font-size: .88rem; color: var(--ink-soft); }
