@@ -34,3 +34,16 @@ Preview: https://dantekenney-max.github.io/scot-kenney-acquisitions/  (live doma
 - [x] Preview link + this list of replaced/removed/retained images.
 
 No offering language, return targets, investor minimums or regulatory claims were added.
+
+---
+# Round 3 — Scot's scanned "Final website image and presentation corrections" (email Mon 10/12/2026 2:15 PM)
+| # | Item | Result | Source / license | Label |
+|---|---|---|---|---|
+| 1 | Approach: brighten marina hero | Kept marina aerial + headline; overlay reduced to a localized left/bottom gradient; image brightness/contrast/saturation raised | Owner's original site asset | "Illustrative imagery" (kept) |
+| 2 | Property Focus RV: replace photographed sketch | Sketch removed; replaced with an illustrative luxury Class A coach on a landscaped private site with cabana and plunge pool (no clubhouse, not the homepage rendering) | AI-generated for this site (ChatGPT); no free licensed stock photo of a premium Class A resort exists | "Illustrative imagery" + "not a completed Scot Kenney Acquisitions project" |
+| 3 | Home waterfront card: replace dark anchor square | Aerial marina beside waterfront residential buildings (different scene from the hero) | Unsplash `1730402733045-269e1b446856` — Avi Werde — https://unsplash.com/photos/an-aerial-view-of-a-marina-and-hotels-IrgZZa57A7E (Unsplash License) | "Illustrative imagery" |
+| 4 | Home hero legibility | Kept image; restrained left-side shadow only (stronger overall overlay only on phones, where text spans the full width) | — | "Conceptual illustration" (kept) |
+| 5 | Home concept images | Kept clubhouse and Vue images; labels unified to "Concept illustration" | Owner-supplied | "Concept illustration" |
+| 6 | About creative-vision image | Lavender rendering brightened; caption now "illustrative vision of transforming land, not a completed company development"; no separate lavender business section | Owner-supplied | "Conceptual rendering" |
+| 7 | Property Focus tech description | Replaced with the owner's new wording verbatim; Vue image kept | Owner-supplied | "Concept illustration" |
+| 8 | Final checks | See verification in session notes (deployed URL, all images, desktop + phone) | — | — |

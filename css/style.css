@@ -297,3 +297,12 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 1.8rem); }
 .focus-card .img.type svg { width: 34%; height: auto; opacity: .9; }
 .feature { margin: 0; }
 .feature figcaption { margin-top: .8rem; font-size: .88rem; color: var(--ink-soft); }
+
+/* Scan corrections (Oct 12, 2:15 PM) */
+/* Home hero: restrained left-side shadow only, image stays bright */
+.hero.hero-left::after { background: linear-gradient(90deg, rgba(10,22,38,.75) 0%, rgba(10,22,38,.58) 40%, rgba(10,22,38,.2) 62%, rgba(10,22,38,0) 78%), linear-gradient(0deg, rgba(10,22,38,.35) 0%, rgba(10,22,38,0) 30%); }
+@media (max-width: 860px) { .hero.hero-left::after { background: linear-gradient(180deg, rgba(10,22,38,.25) 0%, rgba(10,22,38,.55) 40%, rgba(10,22,38,.78) 100%); } }
+/* Approach: bright marina, localized gradient behind the headline */
+.page-head.bright .hero-media img { filter: brightness(1.12) contrast(1.08) saturate(1.12); }
+.page-head.bright::after { background: linear-gradient(90deg, rgba(10,22,38,.62) 0%, rgba(10,22,38,.28) 40%, rgba(10,22,38,0) 68%), linear-gradient(0deg, rgba(10,22,38,.35) 0%, rgba(10,22,38,0) 45%); }
+@media (max-width: 860px) { .page-head.bright::after { background: linear-gradient(0deg, rgba(10,22,38,.7) 0%, rgba(10,22,38,.3) 55%, rgba(10,22,38,.1) 100%); } }

@@ -23,6 +23,8 @@ IMG = {
     "rv":          "images/owner-motorcoach-clubhouse-concept.jpg",      # owner-supplied Image A
     "residential": "images/concept-community-entrance.jpg",              # owner-supplied Vue entrance rendering
     "approach":    "images/marina-aerial.jpg",                           # owner's original Expertise-page marina aerial
+    "marina":      img("1730402733045-269e1b446856", 1200),             # home waterfront card (scan item 3)
+    "coachsite":   "images/motorcoach-site-illustrative.jpg",            # PF RV image (scan item 2)
     "lavender":    "images/owner-blackfoot-lavender-retreat-concept.jpg",# owner-supplied Image B
 }
 def P(r, key):
@@ -58,7 +60,7 @@ def head(r, title, desc, current):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{r}css/style.css?v=5">
+<link rel="stylesheet" href="{r}css/style.css?v=6">
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -139,7 +141,7 @@ def home():
     r = ""
     h = head(r, "Home", "Scot Kenney Acquisitions identifies distinctive real estate opportunities where thoughtful acquisitions, operational improvements, and creative development strategies may unlock long-term value.", "")
     body = f"""
-<section class="hero">
+<section class="hero hero-left">
   <div class="hero-media"><img src="{P(r, 'hero')}" alt="Conceptual illustration of a boutique waterfront apartment building with boats at its private dock" fetchpriority="high"></div>
   <div class="wrap">
     <p class="eyebrow">Scot Kenney Acquisitions</p>
@@ -166,11 +168,11 @@ def home():
         <div class="body"><h3>Multifamily &amp; Income Properties</h3><p>From boutique properties to larger portfolios, we evaluate each acquisition on its merits, without arbitrary unit-count limits.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img type" aria-hidden="true"><svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10v34"/><circle cx="32" cy="8" r="3"/><path d="M24 18h16"/><path d="M14 36c2 9 9 14 18 14s16-5 18-14"/><path d="M10 36l4 0M50 36l4 0"/><path d="M6 58c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/></g></svg></div>
+        <div class="img"><img src="{P(r, 'marina')}" alt="Aerial view of a marina beside waterfront residential buildings" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
         <div class="body"><h3>Waterfront &amp; Marina Opportunities</h3><p>Residential properties, dockage, marina-related assets, and other waterfront locations with multiple potential revenue sources.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img"><img src="{P(r, 'rv')}" alt="Conceptual illustration of a luxury motorcoach resort with a three-story black-glass clubhouse and pool" loading="lazy"><span class="img-tag">Conceptual illustration</span></div>
+        <div class="img"><img src="{P(r, 'rv')}" alt="Conceptual illustration of a luxury motorcoach resort with a three-story black-glass clubhouse and pool" loading="lazy"><span class="img-tag">Concept illustration</span></div>
         <div class="body"><h3>Distinctive RV Resorts</h3><p>Well-planned motorcoach and RV destinations emphasizing attractive environments, thoughtful amenities, and compelling guest experiences&mdash;not ordinary storage lots.</p></div>
       </article>
       <article class="focus-card reveal">
@@ -213,7 +215,7 @@ def approach():
     r = "../"
     h = head(r, "Approach", "An opportunity-driven acquisition philosophy: identify, underwrite, structure, execute, reassess.", "approach/")
     body = f"""
-<section class="page-head">
+<section class="page-head bright">
   <div class="hero-media"><img src="{P(r, 'approach')}" alt="Aerial view of a marina with boats at the docks"></div>
   <div class="wrap">
     <p class="eyebrow">Approach</p>
@@ -285,12 +287,8 @@ def property_focus():
       <div class="measure">
         <h2>Distinctive RV &amp; Motorcoach Destinations</h2>
         <p>We evaluate distinctive RV and motorcoach destinations where design, landscaping, hospitality, and amenities could create a compelling guest experience and additional revenue opportunities. As one example of our founder&rsquo;s creative approach, Scot Kenney conceived a luxury motorcoach resort with a dramatic three-story black-glass clubhouse, private-site amenities, dining, and cultural events; an architect prepared an illustration of his concept. This was a design concept, not a completed development.</p>
-        <div class="concept small">
-          <figure>
-            <div class="frame">{concept_slot("motorcoach")}</div>
-            <figcaption><strong>Concept illustration</strong>Original luxury motorcoach resort concept &mdash; envisioned by Scot Kenney; architectural illustration. Not a completed development.</figcaption>
-          </figure>
-        </div>
+        <div class="pf-media" style="margin-top:1.6rem;max-width:560px"><img src="{P(r, 'coachsite')}" alt="Illustrative image of a luxury Class A motorcoach on a landscaped private site with a cabana and plunge pool" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <p class="muted" style="font-size:.88rem;margin-top:.6rem">Illustrative imagery; not a completed Scot Kenney Acquisitions project.</p>
       </div>
     </div>
 
@@ -303,7 +301,7 @@ def property_focus():
       </div>
       <div>
         <h2>Next-Generation Technology Communities</h2>
-        <p>Scot Kenney Acquisitions is exploring an innovative residential community concept envisioned for professionals in the artificial intelligence and technology industries. The concept aims to address distinctive lifestyle preferences and residential needs we believe are underserved by conventional developments, with potential adaptability to multiple markets.</p>
+        <p>Exploring distinctive, technology-focused residential communities designed around the evolving lifestyles and requirements of professionals in artificial intelligence and other advanced industries.</p>
       </div>
     </div>
 
@@ -361,8 +359,8 @@ def about():
       <h2>Creative Vision. Real Estate Opportunity.</h2>
     </div>
     <figure class="feature reveal">
-      <div class="split-media"><img src="{P(r, 'lavender')}" alt="Conceptual rendering of the Blackfoot Lavender Retreat: lavender fields, a fountain, fire pit and a dark board-and-batten event barn at dusk" loading="lazy"><span class="img-tag">Conceptual rendering</span></div>
-      <figcaption>Blackfoot Lavender Retreat &mdash; conceptual rendering. This is a rendering, not a photograph of completed work.</figcaption>
+      <div class="split-media"><img src="{P(r, 'lavender')}" alt="Conceptual rendering of lavender fields, a fountain, a fire pit and a barn-style building at dusk" loading="lazy"><span class="img-tag">Conceptual rendering</span></div>
+      <figcaption>Conceptual rendering: an illustrative vision of transforming land. Not a photograph of a completed company development.</figcaption>
     </figure>
   </div>
 </section>
