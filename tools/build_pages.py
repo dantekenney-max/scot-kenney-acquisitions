@@ -13,21 +13,25 @@ WHATSAPP = "https://wa.me/15304150778"
 # Leave empty until a form-relay endpoint (e.g. Formspree) is created in Scot's name.
 FORM_ENDPOINT = "https://formsubmit.co/ajax/Scot@scotkenneyacquisitions.com"  # no-account relay; first submission triggers a one-time activation email to Scot
 
-# Illustrative stock imagery (Unsplash License). Labeled "Illustrative imagery" on the site.
+# Illustrative stock imagery (Unsplash License) plus local images/. Sources and licenses: IMAGE_SOURCES.md
 U = "https://images.unsplash.com/photo-{id}?auto=format&fit=crop&w={w}&q={q}"
 def img(id_, w=1600, q=70): return U.format(id=id_, w=w, q=q)
 IMG = {
-    "hero":        img("1575517111478-7f6afd0973db", 2200, 72),
-    "multifamily": img("1580041065738-e72023775cdc", 1200),
-    "waterfront":  img("1544550581-5f7ceaf7f992", 1200),
-    "rv":          img("1566073771259-6a8506099945", 1200),
-    "residential": img("1580587771525-78b9dba3b914", 1200),
-    "value":       img("1574362848149-11496d93a7c7", 1200),
+    "hero":        img("1791542298987-b2187db72292", 2200, 72),
+    "multifamily": img("1762539744669-cb85948f1675", 1200),
+    "waterfront":  "images/marina-aerial.jpg",               # owner's original marina aerial (from the prior site)
+    "rv":          "images/concept-motorcoach-resort-ai.jpg", # AI-generated concept rendering, labeled as such
+    "residential": "images/concept-community-entrance.jpg",   # owner-supplied entrance rendering only
+    "value":       img("1512915922686-57c11dde9b6b", 1200),
     "approach":    img("1505142468610-359e7d316be0", 2200, 70),
     "about":       img("1582719508461-905c673771fd", 2200, 70),
-    "contact":     img("1505118380757-91f5f5632de0", 2200, 70),
-    "focus":       img("1613977257363-707ba9348227", 2200, 70),
+    "contact":     img("1654575100652-41d658a3bc86", 2200, 70),
+    "focus":       img("1727771367464-74863a888160", 2200, 70),
 }
+def P(r, key):
+    """Image URL for a page at depth r; local files under images/ need the relative prefix."""
+    v = IMG[key]
+    return v if v.startswith("http") else r + v
 
 NAV = [("Home", ""), ("Approach", "approach/"), ("Property Focus", "property-focus/"), ("About", "about/"), ("Contact", "contact/")]
 
@@ -139,7 +143,7 @@ def home():
     h = head(r, "Home", "Scot Kenney Acquisitions identifies distinctive real estate opportunities where thoughtful acquisitions, operational improvements, and creative development strategies may unlock long-term value.", "")
     body = f"""
 <section class="hero">
-  <div class="hero-media"><img src="{IMG['hero']}" alt="Refined residential property with a waterside deck at dusk" fetchpriority="high"></div>
+  <div class="hero-media"><img src="{P(r, 'hero')}" alt="Contemporary waterfront apartment building with boats at its private dock" fetchpriority="high"></div>
   <div class="wrap">
     <p class="eyebrow">Scot Kenney Acquisitions</p>
     <h1>Strategic Real Estate Acquisitions &amp; Development</h1>
@@ -161,19 +165,19 @@ def home():
     </div>
     <div class="grid-4">
       <article class="focus-card reveal">
-        <div class="img"><img src="{IMG['multifamily']}" alt="Low-rise apartment community with landscaped courtyard" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <div class="img"><img src="{P(r, 'multifamily')}" alt="Well-kept apartment community arranged around a landscaped pool" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
         <div class="body"><h3>Multifamily &amp; Income Properties</h3><p>From boutique properties to larger portfolios, we evaluate each acquisition on its merits, without arbitrary unit-count limits.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img"><img src="{IMG['waterfront']}" alt="Waterfront residences on a dock over clear water" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <div class="img"><img src="{P(r, 'waterfront')}" alt="Aerial view of a marina with boats at the docks" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
         <div class="body"><h3>Waterfront &amp; Marina Opportunities</h3><p>Residential properties, dockage, marina-related assets, and other waterfront locations with multiple potential revenue sources.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img"><img src="{IMG['rv']}" alt="Resort pool and lodge terrace lit at dusk" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <div class="img"><img src="{P(r, 'rv')}" alt="Concept rendering of a luxury motorcoach resort with private sites, plunge pools and a black-glass clubhouse" loading="lazy"><span class="img-tag">Concept rendering</span></div>
         <div class="body"><h3>Distinctive RV Resorts</h3><p>Well-planned motorcoach and RV destinations emphasizing attractive environments, thoughtful amenities, and compelling guest experiences&mdash;not ordinary storage lots.</p></div>
       </article>
       <article class="focus-card reveal">
-        <div class="img"><img src="{IMG['residential']}" alt="Contemporary residence with clean lines and a reflecting pool" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+        <div class="img"><img src="{P(r, 'residential')}" alt="Concept illustration of the residential community entrance" loading="lazy"><span class="img-tag">Concept illustration</span></div>
         <div class="body"><h3>Innovative Residential Development</h3><p>Exploring modern, design-forward residential communities and adaptable development concepts.</p></div>
       </article>
     </div>
@@ -187,7 +191,7 @@ def home():
       <h2>We look beyond the listing</h2>
       <p class="lead">We look beyond the listing to examine property economics, overlooked revenue opportunities, physical improvements, positioning, operations, and realistic exit options. Each project requires independent due diligence and a sound execution plan.</p>
     </div>
-    <div class="split-media reveal"><img src="{IMG['value']}" alt="Mid-rise apartment building in warm evening light" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+    <div class="split-media reveal"><img src="{P(r, 'value')}" alt="Contemporary white apartment building with palm trees" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
   </div>
 </section>
 
@@ -214,7 +218,7 @@ def approach():
     h = head(r, "Approach", "An opportunity-driven acquisition philosophy: identify, underwrite, structure, execute, reassess.", "approach/")
     body = f"""
 <section class="page-head">
-  <div class="hero-media"><img src="{IMG['approach']}" alt="Aerial view of a coastline where waves meet sand"></div>
+  <div class="hero-media"><img src="{P(r, 'approach')}" alt="Aerial view of a coastline where waves meet sand"></div>
   <div class="wrap">
     <p class="eyebrow">Approach</p>
     <h1>An Opportunity-Driven Acquisition Philosophy</h1>
@@ -257,7 +261,7 @@ def property_focus():
     h = head(r, "Property Focus", "Selective across property types: multifamily and mixed-use, waterfront real estate and marinas, distinctive RV and motorcoach destinations, next-generation technology communities.", "property-focus/")
     body = f"""
 <section class="page-head">
-  <div class="hero-media"><img src="{IMG['focus']}" alt="Contemporary white residence with a terrace and pool"></div>
+  <div class="hero-media"><img src="{P(r, 'focus')}" alt="Waterfront apartment buildings with a sailboat in the foreground"></div>
   <div class="wrap">
     <p class="eyebrow">Property Focus</p>
     <h1>Selective Across Property Types</h1>
@@ -268,7 +272,7 @@ def property_focus():
 <section class="section">
   <div class="wrap">
     <div class="pf-item reveal">
-      <div class="pf-media"><img src="{IMG['multifamily']}" alt="Low-rise apartment community with landscaped courtyard" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+      <div class="pf-media"><img src="{P(r, 'multifamily')}" alt="Well-kept apartment community arranged around a landscaped pool" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
       <div>
         <h2>Multifamily &amp; Mixed-Use</h2>
         <p>We consider income-producing residential properties of varying sizes, including smaller assets with unusual locations or compelling operational potential and larger acquisitions where scale creates efficiencies.</p>
@@ -276,7 +280,7 @@ def property_focus():
     </div>
 
     <div class="pf-item reveal">
-      <div class="pf-media"><img src="{IMG['waterfront']}" alt="Motor yacht moored along a tree-lined waterfront" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+      <div class="pf-media"><img src="{P(r, 'waterfront')}" alt="Aerial view of a marina with boats at the docks" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
       <div>
         <h2>Waterfront Real Estate &amp; Marinas</h2>
         <p>Waterfront apartments, marina assets, boat slips, and related properties may offer distinctive combinations of location, income, and repositioning possibilities. Every opportunity must be evaluated for local permitting, insurance, dockage rights, operating costs, and demand.</p>
@@ -284,14 +288,14 @@ def property_focus():
     </div>
 
     <div class="pf-item reveal">
-      <div class="pf-media"><img src="{IMG['rv']}" alt="Polished travel trailer under an awning at dusk" loading="lazy"><span class="img-tag">Illustrative imagery</span></div>
+      <div class="pf-media"><img src="{P(r, 'rv')}" alt="Concept rendering of a luxury motorcoach resort with private sites, plunge pools and a black-glass clubhouse" loading="lazy"><span class="img-tag">Concept rendering</span></div>
       <div>
         <h2>Distinctive RV &amp; Motorcoach Destinations</h2>
         <p>We evaluate distinctive RV and motorcoach destinations where design, landscaping, hospitality, and amenities could create a compelling guest experience and additional revenue opportunities. As one example of our founder&rsquo;s creative approach, Scot Kenney conceived a luxury motorcoach resort with a dramatic three-story black-glass clubhouse, private-site amenities, dining, and cultural events; an architect prepared an illustration of his concept. This was a design concept, not a completed development.</p>
         <div class="concept small">
           <figure>
             <div class="frame">{concept_slot("motorcoach")}</div>
-            <figcaption><strong>Concept illustration</strong>Architect&rsquo;s illustration of the founder&rsquo;s luxury motorcoach resort concept. A design concept only &mdash; not a built project, active development, or current offering.</figcaption>
+            <figcaption><strong>Concept illustration</strong>Original luxury motorcoach resort concept &mdash; envisioned by Scot Kenney; architectural illustration. Not a completed development.</figcaption>
           </figure>
         </div>
       </div>
@@ -301,12 +305,12 @@ def property_focus():
       <div class="concept" style="margin:0">
         <figure>
           <div class="frame">{concept_slot("entrance")}</div>
-          <figcaption><strong>Concept illustration</strong>Original residential development concept. Subject to feasibility, zoning, and regulatory approvals.</figcaption>
+          <figcaption><strong>Concept illustration</strong>Original development concept. Subject to feasibility and applicable approvals.</figcaption>
         </figure>
       </div>
       <div>
         <h2>Next-Generation Technology Communities</h2>
-        <p>Scot Kenney Acquisitions is exploring an innovative residential community concept envisioned for professionals in the artificial intelligence and technology industries. The concept seeks to address lifestyle preferences and residential requirements we believe are underserved by traditional developments, with contemporary design, privacy, security, and thoughtfully integrated amenities. It is conceived with the potential to adapt to multiple markets. Specific designs, site plans, engineering, construction methods, and proprietary features are not disclosed publicly. Concept only; subject to feasibility, zoning, and approvals.</p>
+        <p>Scot Kenney Acquisitions is exploring an innovative residential community concept envisioned for professionals in the artificial intelligence and technology industries. The concept aims to address distinctive lifestyle preferences and residential needs we believe are underserved by conventional developments, with potential adaptability to multiple markets.</p>
       </div>
     </div>
 
@@ -338,7 +342,7 @@ def about():
     h = head(r, "About", "Entrepreneurial thinking. Disciplined real estate evaluation.", "about/")
     body = f"""
 <section class="page-head">
-  <div class="hero-media"><img src="{IMG['about']}" alt="Waterside deck chairs facing the water at sunset"></div>
+  <div class="hero-media"><img src="{P(r, 'about')}" alt="Waterside deck chairs facing the water at sunset"></div>
   <div class="wrap">
     <p class="eyebrow">About</p>
     <h1>Entrepreneurial Thinking. Disciplined Real Estate Evaluation.</h1>
@@ -369,7 +373,7 @@ def contact():
     h = head(r, "Contact", "Start a business conversation with Scot Kenney Acquisitions.", "contact/")
     body = f"""
 <section class="page-head">
-  <div class="hero-media"><img src="{IMG['contact']}" alt="Aerial view of turquoise water along a sandy shoreline"></div>
+  <div class="hero-media"><img src="{P(r, 'contact')}" alt="Palm-lined waterfront promenade with sailboats and a city skyline"></div>
   <div class="wrap">
     <p class="eyebrow">Contact</p>
     <h1>Start a Business Conversation</h1>
@@ -436,7 +440,7 @@ def notice():
   <div class="wrap prose">
     <p class="lead">{NOTICE}</p>
     <h2>Information on this site</h2>
-    <p>Content on this website describes the general business interests of Scot Kenney Acquisitions. Property types, concepts, and illustrations are presented for informational purposes. Architectural renderings labeled &ldquo;Concept illustration&rdquo; depict design concepts only and do not represent completed projects, active developments, or current offerings. Photographs labeled &ldquo;Illustrative imagery&rdquo; are stock images used under the Unsplash license and do not depict properties owned or operated by the company.</p>
+    <p>Content on this website describes the general business interests of Scot Kenney Acquisitions. Property types, concepts, and illustrations are presented for informational purposes. Architectural renderings labeled &ldquo;Concept illustration&rdquo; depict design concepts only and do not represent completed projects, active developments, or current offerings. Images labeled &ldquo;Concept rendering&rdquo; are computer-generated depictions of a design concept, not photographs of an existing property. Photographs labeled &ldquo;Illustrative imagery&rdquo; are stock or archival images used for illustration and do not depict properties owned, operated, or acquired by the company.</p>
     <h2>Contact form</h2>
     <p>Information submitted through the contact form (name, organization, email address, telephone, and message) is used only to review and respond to your inquiry. It is sent to {EMAIL} and is not sold or shared with third parties. Please do not submit financial statements or confidential documents through the form.</p>
     <h2>Contact</h2>
@@ -495,8 +499,6 @@ if __name__ == "__main__":
     urls = ["", "approach/", "property-focus/", "about/", "contact/", "website-notice/"]
     NL = chr(10)
     sm = '<?xml version="1.0" encoding="UTF-8"?>' + NL + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + NL
-    sm += "".join("  <url><loc>%s%s</loc></url>" % (base, u) + NL for u in urls) + "</urlset>
-"
+    sm += "".join("  <url><loc>%s%s</loc></url>" % (base, u) + NL for u in urls) + "</urlset>" + NL
     write("sitemap.xml", sm)
-")
     write(".nojekyll", "")
