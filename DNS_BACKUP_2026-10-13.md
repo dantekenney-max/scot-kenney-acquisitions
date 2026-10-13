@@ -1,0 +1,25 @@
+# Bluehost DNS for scotkenneyacquisitions.com, BEFORE cutover (read from panel 2026-10-13)
+A autoconfig 67.20.76.83 (4h)
+A autodiscover 67.20.76.83 (4h)
+A cpcalendars 67.20.76.83 (4h)
+A cpcontacts 67.20.76.83 (4h)
+A localhost 127.0.0.1 (4h)
+A mail 67.20.76.83 (1h)
+A @ 67.20.76.83 (4h)
+A webdisk 67.20.76.83 (4h)
+A whm 67.20.76.83 (4h)
+CNAME cpanel -> scotkenneyacquisitions.com (4h)
+CNAME ftp -> scotkenneyacquisitions.com (4h)
+CNAME imap -> mail.scotkenneyacquisitions.com (1h)
+CNAME pop -> mail.scotkenneyacquisitions.com (1h)
+CNAME smtp -> mail.scotkenneyacquisitions.com (1h)
+CNAME webmail -> scotkenneyacquisitions.com (4h)
+CNAME www -> scotkenneyacquisitions.com (4h)
+MX @ -> mail.scotkenneyacquisitions.com (1h)
+MX @ -> scotkenneyacquisitions.com (1h)
+TXT @ "v=spf1 a mx include:websitewelcome.com ~all" (hosting, 4h)
+TXT @ v=spf1 a mx include:websitewelcome.com ~all (4h)
+TXT _caldav._tcp / _caldavs._tcp / _carddav._tcp / _carddavs._tcp path=/
+SRV _autodiscover._tcp -> cpanelemaildiscovery.cpanel.net
+SRV _caldav/_caldavs/_carddav/_carddavs._tcp -> host2011.hostmonster.com
+Rollback: set A @ back to 67.20.76.83 only, www CNAME back to scotkenneyacquisitions.com, remove CNAME file from repo.
