@@ -177,7 +177,7 @@ def home():
       </article>
       <article class="focus-card reveal">
         <div class="img"><img src="{P(r, 'residential')}" alt="Concept illustration of the residential community entrance" loading="lazy"><span class="img-tag">Concept illustration</span></div>
-        <div class="body"><h3>Innovative Residential Development</h3><p>Exploring modern, design-forward residential communities and adaptable development concepts.</p></div>
+        <div class="body"><h3>Innovative Residential Development</h3><p>Exploring distinctive, technology-focused residential communities designed around the evolving lifestyles and requirements of professionals in artificial intelligence and other advanced industries.</p></div>
       </article>
     </div>
   </div>
@@ -349,6 +349,18 @@ def about():
       <p class="lead">Scot Kenney Acquisitions is guided by an entrepreneurial approach to identifying real estate opportunities and considering practical ways to improve their usefulness, appeal, and financial performance. Rather than relying on rigid acquisition categories, the company evaluates individual properties and the specific opportunities they present.</p>
       <p>Our interests range from conventional income-producing assets to distinctive waterfront and resort properties and new residential concepts. We recognize that successful execution depends on careful underwriting, appropriate financing, local market knowledge, and collaboration with qualified professionals.</p>
       <p>We seek productive relationships with property owners, commercial brokers, family offices, established capital firms, developers, and experienced operating organizations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap grid-2" style="align-items:start">
+    <div class="reveal">
+      <p class="eyebrow">Founder</p>
+      <h2>Scot Kenney | Founder</h2>
+    </div>
+    <div class="reveal">
+      <p>Scot Kenney brings decades of entrepreneurial experience spanning international business, acquisitions, and real estate. Having built businesses with distribution in 33 countries and developed extensive investor and industry relationships, he brings a creative, opportunity-driven perspective to property acquisitions and development. His focus is identifying overlooked value and bringing together the right capital, expertise, and resources to realize its potential.</p>
     </div>
   </div>
 </section>
